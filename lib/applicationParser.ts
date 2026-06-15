@@ -1,4 +1,4 @@
-import { Applicant, Child, ResidentDog } from "@/types/applicant";
+import { Adult, Applicant, Child, ResidentDog } from "@/types/applicant";
 
 function getValue(
   text: string,
@@ -221,7 +221,7 @@ function parseAdoptionReasons(
   return reasons;
 }
 
-function parseAdults(text: string) {
+function parseAdults(text: string): Adult[] {
     const section = getSection(
       text,
       "nested_form_adults",

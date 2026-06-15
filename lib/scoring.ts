@@ -15,7 +15,7 @@ export function scoreDog(
     concerns.push("Dog requires a fenced yard");
   }
 
-  if (dog.goodWithDogs && applicant.residentDogs > 0) {
+  if (dog.goodWithDogs && applicant.residentDogs.length > 0) {
     pros.push("Applicant already has dogs");
   }
 
@@ -31,7 +31,7 @@ export function scoreDog(
 
   if (
     dog.energyLevel === "high" &&
-    applicant.activityLevel === "high"
+    applicant.preferredPersonalityTraits.includes("High Energy")
   ) {
     score += 10;
     pros.push(

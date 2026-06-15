@@ -1,5 +1,5 @@
 import { Applicant } from "@/types/applicant";
-import { Dog } from "@/types/dog";
+import { Dog } from "@/types/dogs";
 import { MatchResult } from "@/types/match";
 
 export function scoreDog(
@@ -244,7 +244,7 @@ export function scoreDog(
 
   const personalityMatches =
     dog.temperamentTraits.filter(
-      (trait) =>
+      (trait: string) =>
         applicant.preferredPersonalityTraits.some(
           (pref) =>
             pref

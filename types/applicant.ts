@@ -1,53 +1,69 @@
 export interface Child {
-    age: number;
-    previousDogExperience: string;
-  }
-  
-  export interface ResidentDog {
-    name: string;
-    breed: string;
-    ageCategory: string;
-    sex: string;
-  }
-  
-  export interface Applicant {
-    firstName: string;
-    lastName: string;
-  
-    children: Child[];
-    residentDogs: ResidentDog[];
-  
-    residentCats: number;
-  
-    ownsHome: boolean;
-    fencedYard: boolean;
-    fenceHeight?: number;
-  
-    householdType: string;
-  
-    longestTimeAlone: string;
-  
-    preferredAgeRanges: string[];
-    preferredPersonalityTraits: string[];
+  age: number;
+  previousDogExperience: string;
+}
 
-    adults: number[];
-    exercisePlan: string;
-    sleepLocation: string;
-    aloneLocation: string;
-    vacationCarePlan: string;
+export interface ResidentDog {
+  name: string;
+  breed: string;
+  ageCategory: string;
+  sex: string;
+}
 
-    employerName: string;
-    employmentLength: string;
+export interface Adult {
+  firstName: string;
+  lastName: string;
+  ageRange: string;
+  employed: boolean;
+}
 
-    smokersInHome: boolean;
-    dogAllergiesInHome: boolean;
+export interface Applicant {
+  firstName: string;
+  lastName: string;
+  ageRange: string;
+  email: string;
+  residenceType: string;
 
-    vetName: string;
-    vetPhone: string;
+  children: Child[];
+  residentDogs: ResidentDog[];
+  adults: Adult[];
 
-    readyToAdoptIn: string;
+  residentCats: number;
 
-    preferredCharacteristics: string[];
+  ownsHome: boolean;
+  hasYard: boolean;
+  fencedYard: boolean;
+  fenceHeight?: number;
 
-    otherPetsInHome: boolean;
-  }
+  householdType: string;
+
+  longestTimeAlone: string;
+  trainingPlan: string;
+  walksDogDaily: boolean;
+  preferredGender: string;
+
+  preferredAgeRanges: string[];
+  preferredPersonalityTraits: string[];
+  adoptionReasons: string[];
+  willingForAdjustmentPeriod: boolean;
+
+  exercisePlan: string;
+  sleepLocation: string;
+  aloneLocation: string;
+  vacationCarePlan: string;
+
+  employerName: string;
+  employmentLength: string;
+
+  smokersInHome: boolean;
+  dogAllergiesInHome: boolean;
+
+  vetName: string;
+  vetPhone: string;
+
+  readyToAdoptIn: string;
+
+  preferredCharacteristics: string[];
+
+  otherPetsInHome: boolean;
+}
