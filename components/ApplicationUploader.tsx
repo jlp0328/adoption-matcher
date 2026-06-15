@@ -1,6 +1,6 @@
 "use client";
 
-import { useState } from "react";
+import { useId, useState } from "react";
 import { Applicant } from "@/types/applicant";
 import { MatchResult } from "@/types/match";
 
@@ -34,6 +34,7 @@ function MatchList({
 }
 
 export default function ApplicationUploader() {
+  const fileInputId = useId();
   const [file, setFile] = useState<File | null>(null);
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState("");
@@ -79,11 +80,36 @@ export default function ApplicationUploader() {
       <div className="border rounded-lg p-6 shadow">
         <h1 className="text-3xl font-bold mb-4">Adoption Matcher</h1>
 
-        <input
-          type="file"
-          accept=".pdf"
-          onChange={(e) => setFile(e.target.files?.[0] ?? null)}
-        />
+        <div className="space-y-3">
+          <input
+            id={fileInputId}
+            type="file"
+            accept=".pdf"
+            className="sr-only"
+            onChange={(e) => {
+              setFile(e.target.files?.[0] ?? null);
+              setError("");
+            }}
+          />
+
+          <label
+            htmlFor={fileInputId}
+            className="inline-flex cursor-pointer items-center gap-2 rounded border-2 border-dashed border-blue-300 bg-blue-50 px-4 py-3 text-blue-700 transition hover:border-blue-500 hover:bg-blue-100"
+          >
+            <span className="rounded bg-blue-600 px-3 py-1.5 text-sm font-medium text-white">
+              Choose PDF
+            </span>
+            <span className="text-sm">
+              {file ? file.name : "Click to select an adoption application"}
+            </span>
+          </label>
+
+          {file && (
+            <p className="text-sm text-gray-600">
+              Selected: <span className="font-medium">{file.name}</span>
+            </p>
+          )}
+        </div>
 
         <button
           onClick={handleUpload}
