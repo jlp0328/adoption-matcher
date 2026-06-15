@@ -1,4 +1,5 @@
-import { Adult, Applicant, Child, ResidentDog } from "@/types/applicant";
+import type { Adult } from "@/types/adult";
+import type { Applicant, Child, ResidentDog } from "@/types/applicant";
 
 function getValue(
   text: string,
@@ -228,12 +229,7 @@ function parseAdults(text: string): Adult[] {
       "Are There Children In The Home?"
     );
   
-    const adults: {
-      firstName: string;
-      lastName: string;
-      ageRange: string;
-      employed: boolean;
-    }[] = [];
+    const adults: Adult[] = [];
   
     const lines = section
       .split("\n")
@@ -313,6 +309,8 @@ function parseAdults(text: string): Adult[] {
 export function parseApplication(
   text: string
 ): Applicant {
+  const adults = parseAdults(text);
+
   return {
     firstName:
       getValue(text, "First Name") ?? "",
@@ -390,12 +388,9 @@ export function parseApplication(
         "Select Gender"
       ) ?? "",
 
-    children: parseChildren(
-      text
-    ),
+    children: parseChildren(text),
 
-    residentDogs:
-      parseResidentDogs(text),
+    residentDogs: parseResidentDogs(text),
 
     residentCats: parseBoolean(
       getValue(
@@ -406,99 +401,89 @@ export function parseApplication(
       ? 1
       : 0,
 
-    preferredAgeRanges:
-      parseAgeRanges(text),
+    preferredAgeRanges: parseAgeRanges(text),
 
     preferredPersonalityTraits:
       parsePersonalityTraits(text),
 
-    adoptionReasons:
-      parseAdoptionReasons(text),
+    adoptionReasons: parseAdoptionReasons(text),
 
-    willingForAdjustmentPeriod:
-      parseBoolean(
-        getValue(
-          text,
-          "Dogs can take a month or longer to adjust to a new home, particularly if other pets are involved. Are you willing to devote this much time to making the dog comfortable in your home?"
-        )
-      ),
-      adults: parseAdults(text),
+    willingForAdjustmentPeriod: parseBoolean(
+      getValue(
+        text,
+        "Dogs can take a month or longer to adjust to a new home, particularly if other pets are involved. Are you willing to devote this much time to making the dog comfortable in your home?"
+      )
+    ),
+
+    adults,
 
     exercisePlan:
-      getValue(text, "What Other Means of Exercise Do You Plan On Providing The Dog?") ?? "",
+      getValue(
+        text,
+        "What Other Means of Exercise Do You Plan On Providing The Dog?"
+      ) ?? "",
 
     sleepLocation:
       getValue(text, "Where Will The Dog Sleep?") ?? "",
 
-aloneLocation:
-  getValue(
-    text,
-    "Where Will The Dog Be When Alone?"
-  ) ?? "",
+    aloneLocation:
+      getValue(
+        text,
+        "Where Will The Dog Be When Alone?"
+      ) ?? "",
 
-vacationCarePlan:
-  getValue(
-    text,
-    "Who Will Care For The Dog While You Are On Vacation?"
-  ) ?? "",
+    vacationCarePlan:
+      getValue(
+        text,
+        "Who Will Care For The Dog While You Are On Vacation?"
+      ) ?? "",
 
-employerName:
-  getValue(
-    text,
-    "Name of Employer"
-  ) ?? "",
+    employerName:
+      getValue(text, "Name of Employer") ?? "",
 
-employmentLength:
-  getValue(
-    text,
-    "How Long Employed There?"
-  ) ?? "",
+    employmentLength:
+      getValue(text, "How Long Employed There?") ?? "",
 
-smokersInHome:
-  parseBoolean(
-    getValue(
-      text,
-      "Does Any Member Of Your Household Smoke?"
-    )
-  ),
+    smokersInHome: parseBoolean(
+      getValue(
+        text,
+        "Does Any Member Of Your Household Smoke?"
+      )
+    ),
 
-dogAllergiesInHome:
-  parseBoolean(
-    getValue(
-      text,
-      "Is Any Member Of Your Household Allergic To Dogs?"
-    )
-  ),
+    dogAllergiesInHome: parseBoolean(
+      getValue(
+        text,
+        "Is Any Member Of Your Household Allergic To Dogs?"
+      )
+    ),
 
-vetName:
-  getValue(
-    text,
-    "Please Provide Veterinarian's Name"
-  ) ?? "",
+    vetName:
+      getValue(
+        text,
+        "Please Provide Veterinarian's Name"
+      ) ?? "",
 
-vetPhone:
-  getValue(
-    text,
-    "Please Provide Veterinarian's Phone Number"
-  ) ?? "",
+    vetPhone:
+      getValue(
+        text,
+        "Please Provide Veterinarian's Phone Number"
+      ) ?? "",
 
-readyToAdoptIn:
-  getValue(
-    text,
-    "When Will You Be Ready To Adopt?"
-  ) ?? "",
+    readyToAdoptIn:
+      getValue(
+        text,
+        "When Will You Be Ready To Adopt?"
+      ) ?? "",
 
-otherPetsInHome:
-  parseBoolean(
-    getValue(
-      text,
-      "Are There Other Pets In The Home?"
-    )
-  ),
+    otherPetsInHome: parseBoolean(
+      getValue(
+        text,
+        "Are There Other Pets In The Home?"
+      )
+    ),
 
-preferredCharacteristics:
-  parsePreferredCharacteristics(
-    text
-  ),
+    preferredCharacteristics:
+      parsePreferredCharacteristics(text),
   };
 }

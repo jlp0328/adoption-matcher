@@ -1,3 +1,7 @@
+import type { Adult } from "./adult";
+
+export type { Adult } from "./adult";
+
 export interface Child {
   age: number;
   previousDogExperience: string;
@@ -8,13 +12,6 @@ export interface ResidentDog {
   breed: string;
   ageCategory: string;
   sex: string;
-}
-
-export interface Adult {
-  firstName: string;
-  lastName: string;
-  ageRange: string;
-  employed: boolean;
 }
 
 export interface Applicant {
