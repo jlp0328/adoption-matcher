@@ -1,16 +1,15 @@
-import { duke } from "@/data/dogs/duke";
-import { gigi } from "@/data/dogs/gigi";
-import { Applicant } from "@/types/applicant";
+import { dogs } from "@/data/dogs";
 import { scoreDog } from "./scoreDog";
+import { MatchResult } from "@/types/match";
+import { Applicant } from "@/types/applicant";
+import { Dog } from "@/types/dogs";
 
-export function findMatches(
-  applicant: Applicant
-) {
-  return [duke, gigi]
+export function findMatches(applicant: Applicant) {
+  return dogs
     .map((dog) =>
-      scoreDog(dog, applicant)
-    )
+      scoreDog(dog as unknown as Dog, applicant)
+    )   
     .sort(
-      (a, b) => b.score - a.score
+      (a: MatchResult, b: MatchResult) => b.score - a.score
     );
-}
+}   

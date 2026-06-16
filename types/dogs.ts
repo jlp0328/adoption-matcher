@@ -49,6 +49,14 @@ export interface Dog {
     childNotes?: string;
     separationNotes?: string;
     trainingNotes?: string;
+
+    biteHistory?: boolean;
+    adultOnlyHome?: boolean;
+    behavioralManagementRequired?: boolean;
+    medications?: string[];
   
     adoptionPriority: "standard" | "urgent" | "long_term";
+    requiresAnotherDog?: boolean;
+    medicalNeeds?: string[];
+    kidRestrictions?: string;
   }
