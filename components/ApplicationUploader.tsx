@@ -1,14 +1,13 @@
 "use client";
 
-import { useId, useState } from "react";
+import { useId, useRef, useState } from "react";
 import { Applicant } from "@/types/applicant";
 import { MatchResult } from "@/types/match";
 import { ScreenerDogProfile } from "@/components/ScreenerDogProfile";
 import { MatchRequirements } from "@/components/MatchRequirements";
-import {
-
-  CompatibilityMatrix,
-} from "@/components/CompatabilityMatrix";
+import { CompatibilityMatrix } from "@/components/CompatabilityMatrix";
+import { MatchModeSelector } from "@/components/MatchModeSelector";
+import { dogs } from "@/data/dogs";
 
 function MatchList({
   title,
@@ -46,6 +45,15 @@ export default function ApplicationUploader() {
   const [error, setError] = useState("");
   const [applicant, setApplicant] = useState<Applicant | null>(null);
   const [matches, setMatches] = useState<MatchResult[]>([]);
+  const [matchMode, setMatchMode] = useState<"all" | "selected">("all");
+  const [selectedDogs, setSelectedDogs] = useState<string[]>([]);
+
+  const fileInputRef = useRef<HTMLInputElement>(null);
+
+  const dogOptions = dogs.map((dog) => ({
+    id: dog.id,
+    name: dog.name,
+  }));
 
   async function handleUpload() {
     if (!file) {
@@ -59,6 +67,10 @@ export default function ApplicationUploader() {
 
       const formData = new FormData();
       formData.append("file", file);
+
+      formData.append("matchMode", matchMode);
+
+      formData.append("selectedDogs", JSON.stringify(selectedDogs));
 
       const response = await fetch("/api/parse-application", {
         method: "POST",
@@ -81,13 +93,38 @@ export default function ApplicationUploader() {
     }
   }
 
+  function resetForm() {
+    setFile(null);
+    setLoading(false);
+    setError("");
+
+    setApplicant(null);
+    setMatches([]);
+
+    setMatchMode("all");
+    setSelectedDogs([]);
+
+    if (fileInputRef.current) {
+      fileInputRef.current.value = "";
+    }
+  }
+
   return (
     <div className="max-w-6xl mx-auto p-6">
       <div className="border rounded-lg p-6 shadow">
         <h1 className="text-3xl font-bold mb-4">Adoption Matcher</h1>
 
+        <MatchModeSelector
+          value={matchMode}
+          onChange={setMatchMode}
+          dogs={dogOptions}
+          selectedDogs={selectedDogs}
+          onSelectedDogsChange={setSelectedDogs}
+        />
+
         <div className="space-y-3">
           <input
+            ref={fileInputRef}
             id={fileInputId}
             type="file"
             accept=".pdf"
@@ -117,13 +154,23 @@ export default function ApplicationUploader() {
           )}
         </div>
 
-        <button
-          onClick={handleUpload}
-          disabled={!file || loading}
-          className="mt-4 px-4 py-2 bg-blue-600 text-white rounded disabled:opacity-50"
-        >
-          {loading ? "Processing..." : "Analyze Application"}
-        </button>
+        <div className="mt-4 flex gap-3">
+          <button
+            onClick={handleUpload}
+            disabled={!file || loading}
+            className="px-4 py-2 bg-blue-600 text-white rounded disabled:opacity-50"
+          >
+            {loading ? "Processing..." : "Analyze Application"}
+          </button>
+
+          <button
+            onClick={resetForm}
+            disabled={loading}
+            className="px-4 py-2 border border-gray-300 rounded hover:bg-red-500 disabled:opacity-50"
+          >
+            Reset
+          </button>
+        </div>
 
         {error && <div className="text-red-600 mt-4">{error}</div>}
       </div>

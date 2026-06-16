@@ -15,27 +15,27 @@ export async function POST(req: Request) {
     const file = formData.get("file") as File;
 
     if (!file) {
-      return NextResponse.json(
-        { error: "No file uploaded" },
-        { status: 400 }
-      );
+      return NextResponse.json({ error: "No file uploaded" }, { status: 400 });
+    }
+
+    const matchMode = formData.get("matchMode");
+    const selectedDogsRaw = formData.get("selectedDogs");
+
+    let dogIds: string[] | undefined;
+
+    if (matchMode === "selected" && typeof selectedDogsRaw === "string") {
+      dogIds = JSON.parse(selectedDogsRaw) as string[];
     }
 
     const bytes = await file.arrayBuffer();
-
     const buffer = Buffer.from(bytes);
 
     const parser = new PDFParse({ data: buffer });
     const pdfData = await parser.getText();
     await parser.destroy();
 
-    const applicant = parseApplication(
-      pdfData.text
-    );
-
-    const matches = findMatches(
-      applicant
-    );
+    const applicant = parseApplication(pdfData.text);
+    const matches = findMatches(applicant, dogIds);
 
     return NextResponse.json({
       applicant,
@@ -46,12 +46,11 @@ export async function POST(req: Request) {
 
     return NextResponse.json(
       {
-        error:
-          "Unable to process application",
+        error: "Unable to process application",
       },
       {
         status: 500,
-      }
+      },
     );
   }
 }
