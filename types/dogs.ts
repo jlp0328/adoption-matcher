@@ -6,34 +6,48 @@ export interface Dog {
     ageYears: number;
     weightLbs: number;
     sex: "male" | "female";
-    size: "small" | "medium" | "large";
+    size?: "small" | "medium" | "large";
     lifeStage: "puppy" | "young" | "adult" | "senior";
   
     houseTrained: boolean;
     crateTrained: boolean;
   
-    energyLevel: "low" | "medium" | "high";
+    energyLevel: "low" | "medium" | "high" | "medium-high";
   
-    goodWithDogs: boolean | "unknown";
-    goodWithCats: boolean | "unknown";
-    goodWithChildren: boolean | "unknown";
+    goodWithDogs:
+    | "yes"
+    | "no"
+    | "selective"
+    | "unknown"
+  
+  goodWithCats:
+    | "yes"
+    | "no"
+    | "unknown"
+  
+  goodWithChildren:
+    | "yes"
+    | "no"
+    | "older_children_only"
+    | "likely"
+    | "unknown"
   
     fenceRequired: boolean;
-    apartmentAppropriate: boolean;
+    apartmentAppropriate?: boolean;
   
     resourceGuarding: boolean;
     resourceGuardingFood?: boolean;
     resourceGuardingCrate?: boolean;
   
-    separationAnxiety: "none" | "mild" | "moderate" | "severe";
+    separationAnxiety: "none" | "mild" | "moderate" | "severe" | "unknown";
   
-    leashSkills: "poor" | "fair" | "good" | "excellent";
+    leashSkills?: "poor" | "fair" | "good" | "excellent";
   
     strengths: string[];
     temperamentTraits: string[];
-    activityNeeds: string[];
+    activityNeeds?: string[];
   
-    preferredHome: {
+    preferredHome?: {
       fencedYard: boolean;
       dogExperience: string;
       activityLevel: string;
@@ -42,7 +56,7 @@ export interface Dog {
       cats: string;
     };
   
-    dealBreakers: string[];
+    dealBreakers?: string[];
     discussionPoints: string[];
   
     dogCompatibilityNotes?: string;
@@ -55,7 +69,7 @@ export interface Dog {
     behavioralManagementRequired?: boolean;
     medications?: string[];
   
-    adoptionPriority: "standard" | "urgent" | "long_term";
+    adoptionPriority?: "standard" | "urgent" | "long_term";
     requiresAnotherDog?: boolean;
     medicalNeeds?: string[];
     kidRestrictions?: string;

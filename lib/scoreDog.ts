@@ -50,7 +50,7 @@ export function scoreDog(
   //
 
   if (applicant.residentDogs.length > 0) {
-    if (dog.goodWithDogs === true) {
+    if (dog.goodWithDogs === "yes") {
       earnedPoints += 15;
 
       strengths.push(
@@ -86,7 +86,7 @@ export function scoreDog(
   //
 
   if (applicant.otherPetsInHome) {
-    if (dog.goodWithCats === true) {
+    if (dog.goodWithCats === "yes") {
       earnedPoints += 15;
 
       strengths.push(
@@ -133,7 +133,8 @@ export function scoreDog(
     );
 
     if (
-      dog.goodWithChildren === true
+      dog.goodWithChildren === "yes" ||
+      dog.goodWithChildren === "likely"
     ) {
       earnedPoints += 15;
 

@@ -16,9 +16,9 @@ export const gigi: Dog = {
   energyLevel: "high",
   lifeStage: "puppy",
 
-  goodWithDogs: true,
-  goodWithCats: true,
-  goodWithChildren: true,
+  goodWithDogs: "yes",
+  goodWithCats: "yes",
+  goodWithChildren: "yes",
 
   fenceRequired: false,
   apartmentAppropriate: true,

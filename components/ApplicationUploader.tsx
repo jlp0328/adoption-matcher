@@ -3,6 +3,12 @@
 import { useId, useState } from "react";
 import { Applicant } from "@/types/applicant";
 import { MatchResult } from "@/types/match";
+import { ScreenerDogProfile } from "@/components/ScreenerDogProfile";
+import { MatchRequirements } from "@/components/MatchRequirements";
+import {
+
+  CompatibilityMatrix,
+} from "@/components/CompatabilityMatrix";
 
 function MatchList({
   title,
@@ -156,24 +162,38 @@ export default function ApplicationUploader() {
           <div className="space-y-6">
             {matches.map((match) => (
               <div key={match.dogId} className="border rounded-lg p-6">
-                <div className="flex flex-wrap justify-between items-start gap-4 mb-4">
+                <div className="flex flex-wrap justify-between items-start gap-4 mb-6">
                   <div>
-                    <h3 className="text-xl font-bold">{match.dogName}</h3>
-                    <div className="text-sm text-gray-600 mt-1">
-                      {match.dogProfile.breed} · {match.dogProfile.ageYears}{" "}
-                      yrs · {match.dogProfile.weightLbs} lbs ·{" "}
-                      {match.dogProfile.energyLevel} energy
-                    </div>
+                    <h3 className="text-2xl font-bold">{match.dogName}</h3>
+                    <p className="text-sm text-gray-500 mt-1">
+                      Match score for {applicant?.firstName}{" "}
+                      {applicant?.lastName}
+                    </p>
+
+                    {match.hardStops.length > 0 && (
+                      <div className="mt-2 flex flex-wrap gap-2">
+                        {match.hardStops.map((stop) => (
+                          <span
+                            key={stop}
+                            className="px-2 py-1 text-xs rounded bg-red-100 text-red-800"
+                          >
+                            {stop}
+                          </span>
+                        ))}
+                      </div>
+                    )}
                   </div>
 
                   <div className="text-right">
                     <div className="text-3xl font-bold">{match.score}%</div>
-                    <div className="font-medium">{match.recommendation}</div>
+                    <div className="font-medium text-blue-700">
+                      {match.recommendation}
+                    </div>
                   </div>
                 </div>
 
                 {match.hardStops.length > 0 && (
-                  <div className="mb-4 rounded-lg border border-red-300 bg-red-50 p-4">
+                  <div className="mb-6 rounded-lg border border-red-300 bg-red-50 p-4">
                     <h4 className="font-semibold text-red-800 mb-2">
                       Hard Stops
                     </h4>
@@ -185,77 +205,73 @@ export default function ApplicationUploader() {
                   </div>
                 )}
 
-                <div className="flex flex-wrap gap-2 mb-4">
-                  {match.dogProfile.goodWithDogs === true && (
-                    <span className="border rounded px-2 py-1 text-sm">
-                      Good With Dogs
-                    </span>
-                  )}
+                <div className="mb-6 rounded-lg border p-4">
+                  <h4 className="text-lg font-semibold mb-4">
+                    Adoption Requirements
+                  </h4>
 
-                  {match.dogProfile.goodWithCats === true && (
-                    <span className="border rounded px-2 py-1 text-sm">
-                      Good With Cats
-                    </span>
-                  )}
-
-                  {match.dogProfile.goodWithChildren === true && (
-                    <span className="border rounded px-2 py-1 text-sm">
-                      Good With Kids
-                    </span>
-                  )}
-
-                  {match.dogProfile.fenceRequired && (
-                    <span className="border rounded px-2 py-1 text-sm">
-                      Fence Required
-                    </span>
-                  )}
-
-                  {match.dogProfile.resourceGuarding && (
-                    <span className="border rounded px-2 py-1 text-sm">
-                      Resource Guarding
-                    </span>
-                  )}
+                  <MatchRequirements
+                    applicant={applicant as unknown as Applicant}
+                    dog={match.dogProfile}
+                  />
                 </div>
 
-                <MatchList title="Strengths" items={match.strengths} />
-                <MatchList title="Concerns" items={match.concerns} />
-                <MatchList
-                  title="Discussion Points"
-                  items={match.discussionPoints}
-                />
+                <div className="mb-6">
+                  <CompatibilityMatrix
+                    applicant={applicant as unknown as Applicant}
+                    dog={match.dogProfile}
+                  />
+                </div>
 
-                {(match.scoreDrivers.positive.length > 0 ||
-                  match.scoreDrivers.negative.length > 0) && (
-                  <div className="mb-4">
-                    <h4 className="font-semibold mb-2">Score Breakdown</h4>
-                    <div className="grid md:grid-cols-2 gap-4 text-sm">
-                      {match.scoreDrivers.positive.length > 0 && (
-                        <ul className="space-y-1">
-                          {match.scoreDrivers.positive.map((item, index) => (
-                            <li key={index} className="text-green-700">
-                              {item}
-                            </li>
-                          ))}
-                        </ul>
-                      )}
-                      {match.scoreDrivers.negative.length > 0 && (
-                        <ul className="space-y-1">
-                          {match.scoreDrivers.negative.map((item, index) => (
-                            <li key={index} className="text-red-700">
-                              {item}
-                            </li>
-                          ))}
-                        </ul>
-                      )}
+                <div className="mb-6 rounded-lg border p-4">
+                  <h4 className="text-lg font-semibold mb-4">Dog Profile</h4>
+
+                  <ScreenerDogProfile dog={match.dogProfile} />
+                </div>
+
+                <div className="mb-6 rounded-lg border p-4">
+                  <h4 className="text-lg font-semibold mb-4">Match Analysis</h4>
+
+                  <MatchList title="Match Strengths" items={match.strengths} />
+                  <MatchList title="Concerns" items={match.concerns} />
+                  <MatchList
+                    title="Discussion Points"
+                    items={match.discussionPoints}
+                  />
+
+                  {(match.scoreDrivers.positive.length > 0 ||
+                    match.scoreDrivers.negative.length > 0) && (
+                    <div className="mb-4">
+                      <h4 className="font-semibold mb-2">Score Breakdown</h4>
+                      <div className="grid md:grid-cols-2 gap-4 text-sm">
+                        {match.scoreDrivers.positive.length > 0 && (
+                          <ul className="space-y-1">
+                            {match.scoreDrivers.positive.map((item, index) => (
+                              <li key={index} className="text-green-700">
+                                {item}
+                              </li>
+                            ))}
+                          </ul>
+                        )}
+                        {match.scoreDrivers.negative.length > 0 && (
+                          <ul className="space-y-1">
+                            {match.scoreDrivers.negative.map((item, index) => (
+                              <li key={index} className="text-red-700">
+                                {item}
+                              </li>
+                            ))}
+                          </ul>
+                        )}
+                      </div>
                     </div>
-                  </div>
-                )}
+                  )}
 
-                <div>
-                  <h4 className="font-semibold mb-2">Foster Summary</h4>
-                  <pre className="whitespace-pre-wrap rounded p-4 text-sm">
-                    {match.fosterSummary}
-                  </pre>
+                  <div>
+                    <h4 className="font-semibold mb-2">Foster Summary</h4>
+                    <pre className="whitespace-pre-wrap rounded p-4 text-sm border">
+                      {match.fosterSummary}
+                    </pre>
+                  </div>
                 </div>
               </div>
             ))}

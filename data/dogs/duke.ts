@@ -16,7 +16,7 @@ export const duke: Dog = {
   energyLevel: "medium",
   lifeStage: "adult",
 
-  goodWithDogs: true,
+  goodWithDogs: "yes",
   goodWithCats: "unknown",
   goodWithChildren: "unknown",
 

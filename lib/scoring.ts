@@ -15,12 +15,12 @@ export function scoreDog(
     concerns.push("Dog requires a fenced yard");
   }
 
-  if (dog.goodWithDogs && applicant.residentDogs.length > 0) {
+  if (dog.goodWithDogs === "yes" && applicant.residentDogs.length > 0) {
     pros.push("Applicant already has dogs");
   }
 
   if (
-    dog.goodWithCats === false &&
+    dog.goodWithCats === "no" &&
     applicant.residentCats > 0
   ) {
     score -= 50;
