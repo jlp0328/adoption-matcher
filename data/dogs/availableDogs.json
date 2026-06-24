@@ -28,8 +28,16 @@
     "url": "https://crisisdogsnc.org/dog/charlie-11/"
   },
   {
+    "name": "Civic",
+    "url": "https://crisisdogsnc.org/dog/civic/"
+  },
+  {
     "name": "Duke",
     "url": "https://crisisdogsnc.org/dog/duke-5/"
+  },
+  {
+    "name": "Georgie",
+    "url": "https://crisisdogsnc.org/dog/georgie-2/"
   },
   {
     "name": "Henry",
@@ -48,16 +56,12 @@
     "url": "https://crisisdogsnc.org/dog/laia/"
   },
   {
-    "name": "Lillybee",
-    "url": "https://crisisdogsnc.org/dog/lillybee/"
-  },
-  {
     "name": "Lola",
     "url": "https://crisisdogsnc.org/dog/lola-7/"
   },
   {
-    "name": "Lukas",
-    "url": "https://crisisdogsnc.org/dog/lukas/"
+    "name": "Louis",
+    "url": "https://crisisdogsnc.org/dog/louis-2/"
   },
   {
     "name": "Maui",
@@ -84,23 +88,15 @@
     "url": "https://crisisdogsnc.org/dog/rebel/"
   },
   {
-    "name": "Reese",
-    "url": "https://crisisdogsnc.org/dog/reese-3/"
-  },
-  {
     "name": "Roni",
     "url": "https://crisisdogsnc.org/dog/roni-3/"
   },
   {
-    "name": "Sable",
-    "url": "https://crisisdogsnc.org/dog/sable-2/"
-  },
-  {
-    "name": "Shaggy",
-    "url": "https://crisisdogsnc.org/dog/shaggy-2/"
-  },
-  {
     "name": "Sheila",
     "url": "https://crisisdogsnc.org/dog/sheila/"
-  }
+  },
+  {
+    "name": "Steven",
+    "url": "https://crisisdogsnc.org/dog/steven/"
+  },
 ]

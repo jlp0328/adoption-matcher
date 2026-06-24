@@ -6,8 +6,12 @@ import { MatchResult } from "@/types/match";
 import { ScreenerDogProfile } from "@/components/ScreenerDogProfile";
 import { MatchRequirements } from "@/components/MatchRequirements";
 import { CompatibilityMatrix } from "@/components/CompatabilityMatrix";
-import { MatchModeSelector } from "@/components/MatchModeSelector";
+import { MatchMode, MatchModeSelector } from "@/components/MatchModeSelector";
+import { DogSelector } from "@/components/DogSelector";
+import { exportMatchReport } from "@/utils/exportMatchReport";
 import { dogs } from "@/data/dogs";
+import { Dog } from "@/types/dogs";
+import { RankingDogSelector } from "./RankingDogSelector";
 
 function MatchList({
   title,
@@ -40,13 +44,17 @@ function MatchList({
 
 export default function ApplicationUploader() {
   const fileInputId = useId();
-  const [file, setFile] = useState<File | null>(null);
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState("");
   const [applicant, setApplicant] = useState<Applicant | null>(null);
   const [matches, setMatches] = useState<MatchResult[]>([]);
-  const [matchMode, setMatchMode] = useState<"all" | "selected">("all");
-  const [selectedDogs, setSelectedDogs] = useState<string[]>([]);
+  const [matchMode, setMatchMode] = useState<MatchMode>("allDogs");
+  const [selectedDogIds, setSelectedDogIds] = useState<string[]>([]);
+  const [selectedRankingDogId, setSelectedRankingDogId] = useState("");
+
+  const MAX_APPLICATIONS = 5;
+
+  const [files, setFiles] = useState<File[]>([]);
 
   const fileInputRef = useRef<HTMLInputElement>(null);
 
@@ -56,21 +64,41 @@ export default function ApplicationUploader() {
   }));
 
   async function handleUpload() {
-    if (!file) {
+    if (files.length === 0) {
       setError("Please select a PDF.");
       return;
     }
+
+    if (matchMode === "rankApplicants" && !selectedRankingDogId) {
+      setError("Please select a dog.");
+
+      return;
+    }
+
+    if (
+        matchMode === "selectedDogs" &&
+        selectedDogIds.length === 0
+      ) {
+        setError(
+          "Please select at least one dog."
+        );
+      
+        return;
+      }
 
     try {
       setLoading(true);
       setError("");
 
       const formData = new FormData();
-      formData.append("file", file);
+
+      files.forEach((file) => {
+        formData.append("files", file);
+      });
 
       formData.append("matchMode", matchMode);
-
-      formData.append("selectedDogs", JSON.stringify(selectedDogs));
+      formData.append("selectedDogs", JSON.stringify(selectedDogIds));
+      formData.append("selectedRankingDogId", selectedRankingDogId);
 
       const response = await fetch("/api/parse-application", {
         method: "POST",
@@ -83,8 +111,8 @@ export default function ApplicationUploader() {
 
       const data = await response.json();
 
-      setApplicant(data.applicant);
-      setMatches(data.matches);
+      setApplicant(data.applicant ?? data.applicants?.[0] ?? null);
+      setMatches(data.matches?.[0] ?? data.matches ?? []);
     } catch (err) {
       console.error(err);
       setError("Unable to process application.");
@@ -94,15 +122,16 @@ export default function ApplicationUploader() {
   }
 
   function resetForm() {
-    setFile(null);
+    setFiles([]);
     setLoading(false);
     setError("");
 
     setApplicant(null);
     setMatches([]);
 
-    setMatchMode("all");
-    setSelectedDogs([]);
+    setMatchMode("allDogs");
+    setSelectedDogIds([]);
+    setSelectedRankingDogId("");
 
     if (fileInputRef.current) {
       fileInputRef.current.value = "";
@@ -114,23 +143,46 @@ export default function ApplicationUploader() {
       <div className="border rounded-lg p-6 shadow">
         <h1 className="text-3xl font-bold mb-4">Adoption Matcher</h1>
 
-        <MatchModeSelector
-          value={matchMode}
-          onChange={setMatchMode}
-          dogs={dogOptions}
-          selectedDogs={selectedDogs}
-          onSelectedDogsChange={setSelectedDogs}
-        />
+        <MatchModeSelector mode={matchMode} onChange={setMatchMode} />
+
+        {/* Compare Selected Dogs Mode */}
+        {matchMode === "selectedDogs" && (
+          <div className="mt-4">
+            <DogSelector
+              dogs={dogs as Dog[]}
+              selectedDogIds={selectedDogIds}
+              onChange={setSelectedDogIds}
+            />
+          </div>
+        )}
+
+        {/* Rank Applicants Mode */}
+        {matchMode === "rankApplicants" && (
+          <div className="mt-4">
+            <RankingDogSelector
+              dogs={dogs as Dog[]}
+              selectedDogId={selectedRankingDogId}
+              onChange={setSelectedRankingDogId}
+            />
+          </div>
+        )}
 
         <div className="space-y-3">
           <input
-            ref={fileInputRef}
             id={fileInputId}
             type="file"
+            multiple
             accept=".pdf"
             className="sr-only"
             onChange={(e) => {
-              setFile(e.target.files?.[0] ?? null);
+              const selectedFiles = Array.from(e.target.files ?? []);
+
+              if (selectedFiles.length > MAX_APPLICATIONS) {
+                setError(`Maximum ${MAX_APPLICATIONS} applications allowed`);
+                return;
+              }
+
+              setFiles(selectedFiles);
               setError("");
             }}
           />
@@ -143,21 +195,35 @@ export default function ApplicationUploader() {
               Choose PDF
             </span>
             <span className="text-sm">
-              {file ? file.name : "Click to select an adoption application"}
+              {files.length > 0
+                ? `${files.length} application(s) selected`
+                : "Click to select adoption applications"}
             </span>
           </label>
 
-          {file && (
-            <p className="text-sm text-gray-600">
-              Selected: <span className="font-medium">{file.name}</span>
-            </p>
+          {files.length > 0 && (
+            <div className="mt-3">
+              <div className="font-medium mb-2">Applications Selected</div>
+
+              <ul className="space-y-1 text-sm">
+                {files.map((file) => (
+                  <li key={file.name} className="text-gray-700">
+                    ✓ {file.name}
+                  </li>
+                ))}
+              </ul>
+
+              <div className="mt-2 text-xs text-gray-500">
+                Selected: {files.length} / {MAX_APPLICATIONS}
+              </div>
+            </div>
           )}
         </div>
 
         <div className="mt-4 flex gap-3">
           <button
             onClick={handleUpload}
-            disabled={!file || loading}
+            disabled={files.length === 0 || loading}
             className="px-4 py-2 bg-blue-600 text-white rounded disabled:opacity-50"
           >
             {loading ? "Processing..." : "Analyze Application"}
@@ -170,6 +236,14 @@ export default function ApplicationUploader() {
           >
             Reset
           </button>
+          {matches.length > 0 && (
+            <button
+              onClick={() => exportMatchReport(applicant, matches)}
+              className="px-4 py-2 bg-green-600 text-white rounded"
+            >
+              Export PDF
+            </button>
+          )}
         </div>
 
         {error && <div className="text-red-600 mt-4">{error}</div>}

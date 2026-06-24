@@ -1,5 +1,321 @@
 [
   {
+    "id": "civic",
+    "name": "Civic",
+    "breed": "Miniature Pinscher Mix",
+    "ageYears": 6,
+    "weightLbs": 10,
+    "sex": "male",
+    "lifeStage": "adult",
+    "houseTrained": true,
+    "crateTrained": true,
+    "energyLevel": "low",
+    "goodWithDogs": "yes",
+    "goodWithCats": "unknown",
+    "goodWithChildren": "no",
+    "adultOnlyHome": true,
+    "fenceRequired": false,
+    "otherPetsPreferred": true,
+    "resourceGuarding": false,
+    "separationAnxiety": "none",
+    "specialNeeds": [
+      "Congenital hole in the heart requiring lifelong monitoring",
+      "Fear-based behaviors with strangers",
+      "Needs slow introductions and patient trust building"
+    ],
+    "temperamentTraits": [
+      "loyal",
+      "sensitive",
+      "gentle",
+      "fearful with strangers",
+      "affectionate once bonded",
+      "low energy",
+      "snuggly",
+      "dog friendly"
+    ],
+    "strengths": [
+      "Deeply loyal once bonded",
+      "Excellent with other dogs",
+      "Low energy companion",
+      "Crate trained and mostly house trained",
+      "Can be left alone without being crated",
+      "Enjoys toys and lounging with his people",
+      "Very affectionate with trusted people"
+    ],
+    "discussionPoints": [
+      "Fear-based behaviors around unfamiliar people",
+      "Potential bite risk if cornered or pushed too quickly",
+      "Needs a calm, low-traffic home",
+      "Must be allowed to build trust at his own pace",
+      "Prefers female energy",
+      "Not suitable for homes with children",
+      "Will likely always be vocal with visitors",
+      "Requires lifelong cardiac monitoring",
+      "Would benefit from another calm dog in the home",
+      "Needs adopters experienced with anxious dogs"
+    ],
+    "medicalNeeds": [
+      "Congenital heart defect (hole in heart)",
+      "Lifelong veterinary monitoring"
+    ],
+    "trainingNeeds": [
+      "Continued confidence building",
+      "Slow introductions to new people",
+      "Management around visitors",
+      "Trust-building exercises"
+    ],
+    "exerciseNeeds": [
+      "Low activity requirements",
+      "Short walks and indoor companionship"
+    ],
+    "idealHome": [
+      "Low traffic home",
+      "Patient adopter",
+      "Older single woman or calm couple preferred",
+      "Another friendly dog preferred",
+      "No children",
+      "Predictable routine",
+      "Allowed to sleep in bed and snuggle under blankets"
+    ],
+    "adultOnlyHome": true,
+    "canBeOnlyDog": true,
+    "wouldBenefitFromDogSibling": true,
+    "prefersWomen": true,
+    "biteRisk": true,
+    "experiencedOwnerPreferred": true,
+    "goodApartmentDog": true
+  },
+  {
+    "id": "georgie",
+    "name": "Georgie",
+    "breed": "Chihuahua/Pug Mix",
+    "ageYears": 2,
+    "weightLbs": 6,
+    "sex": "male",
+    "lifeStage": "adult",
+    "houseTrained": false,
+    "crateTrained": true,
+    "energyLevel": "low",
+    "goodWithDogs": "yes",
+    "goodWithCats": "unknown",
+    "goodWithChildren": "yes",
+    "adultOnlyHome": false,
+    "fenceRequired": false,
+    "otherPetsPreferred": true,
+    "resourceGuarding": false,
+    "separationAnxiety": "mild",
+    "specialNeeds": [
+      "Needs companionship and prefers people to be home often",
+      "Still working on house training"
+    ],
+    "temperamentTraits": [
+      "affectionate",
+      "snuggly",
+      "velcro dog",
+      "gentle",
+      "friendly",
+      "people-oriented",
+      "easygoing",
+      "dog friendly"
+    ],
+    "strengths": [
+      "Extremely affectionate and loves cuddling",
+      "Great with other dogs",
+      "Likely cat friendly",
+      "Good with respectful children",
+      "Low-energy couch companion",
+      "Comfortable with an open crate",
+      "Adapts well to routines",
+      "Easygoing personality"
+    ],
+    "discussionPoints": [
+      "Still working on house training",
+      "Very people-oriented and may not enjoy being alone for long periods",
+      "Because of his small size, children should be gentle and respectful",
+      "Would benefit from another dog or someone home frequently",
+      "Needs continued consistency with potty habits"
+    ],
+    "medicalNeeds": [],
+    "trainingNeeds": [
+      "Continue house-training routine",
+      "Basic obedience and confidence building"
+    ],
+    "exerciseNeeds": [
+      "Short daily walks",
+      "Indoor play and snuggle time"
+    ],
+    "idealHome": [
+      "Someone home most of the day",
+      "Another friendly dog would be a plus",
+      "Calm household",
+      "Respectful children are okay",
+      "Apartment or house",
+      "Family looking for a cuddle companion"
+    ],
+    "canBeOnlyDog": true,
+    "wouldBenefitFromDogSibling": true,
+    "prefersWomen": false,
+    "biteRisk": false,
+    "experiencedOwnerPreferred": false,
+    "goodApartmentDog": true
+  },
+  {
+    "id": "louis",
+    "name": "Louis",
+    "breed": "Chihuahua Mix",
+    "ageYears": 7,
+    "weightLbs": 11,
+    "sex": "male",
+    "lifeStage": "adult",
+    "houseTrained": true,
+    "crateTrained": true,
+    "energyLevel": "low",
+    "goodWithDogs": "yes",
+    "goodWithCats": "yes",
+    "goodWithChildren": "yes",
+    "adultOnlyHome": false,
+    "fenceRequired": false,
+    "otherPetsPreferred": true,
+    "resourceGuarding": false,
+    "separationAnxiety": "mild",
+    "specialNeeds": [
+      "Needs companionship and prefers someone home often"
+    ],
+    "temperamentTraits": [
+      "affectionate",
+      "gentle",
+      "easygoing",
+      "loyal",
+      "snuggly",
+      "people-oriented",
+      "friendly",
+      "calm"
+    ],
+    "strengths": [
+      "Excellent with dogs",
+      "Good with cats",
+      "Good with respectful children",
+      "House trained and crate trained",
+      "Low-energy companion",
+      "Very affectionate and cuddly",
+      "Enjoys car rides and being with his people",
+      "Easygoing personality"
+    ],
+    "discussionPoints": [
+      "Prefers a home where someone is around frequently",
+      "Would benefit from another dog companion but can be an only dog",
+      "May become lonely if left alone for very long periods",
+      "Needs continued consistency and companionship"
+    ],
+    "medicalNeeds": [],
+    "trainingNeeds": [
+      "Basic obedience reinforcement",
+      "Continue maintaining potty routine"
+    ],
+    "exerciseNeeds": [
+      "Short walks",
+      "Indoor play",
+      "Lots of lap time and companionship"
+    ],
+    "idealHome": [
+      "Someone home often",
+      "Retired or work-from-home adopter",
+      "Another friendly dog would be a bonus",
+      "Apartment or house",
+      "Calm family environment",
+      "Family looking for a loving companion"
+    ],
+    "canBeOnlyDog": true,
+    "wouldBenefitFromDogSibling": true,
+    "prefersWomen": false,
+    "biteRisk": false,
+    "experiencedOwnerPreferred": false,
+    "goodApartmentDog": true
+  },
+  {
+  "id": "maui",
+  "name": "Maui",
+  "breed": "Husky Mix",
+  "ageYears": 1,
+  "weightLbs": 47,
+  "sex": "male",
+  "lifeStage": "youngAdult",
+  "houseTrained": true,
+  "crateTrained": true,
+  "energyLevel": "high",
+  "goodWithDogs": "yes",
+  "goodWithCats": "no",
+  "goodWithChildren": "yes",
+  "adultOnlyHome": false,
+  "fenceRequired": false,
+  "otherPetsPreferred": true,
+  "resourceGuarding": false,
+  "separationAnxiety": "none",
+  "specialNeeds": [
+    "Requires significant daily exercise and enrichment",
+    "Needs continued leash training",
+    "Not suitable for homes with cats",
+    "Not suitable for homes with chickens"
+  ],
+  "temperamentTraits": [
+    "happy-go-lucky",
+    "social",
+    "playful",
+    "affectionate",
+    "friendly",
+    "goofy",
+    "adventurous",
+    "dog-loving",
+    "people-oriented",
+    "cuddly"
+  ],
+  "strengths": [
+    "Excellent with children",
+    "Very dog social and would love canine siblings",
+    "House trained and crate trained",
+    "Wonderful house manners",
+    "Great travel companion and rides well in the car",
+    "Friendly with everyone he meets",
+    "Affectionate and cuddly after playtime",
+    "Would make an excellent hiking or adventure buddy"
+  ],
+  "discussionPoints": [
+    "Needs regular exercise and mental stimulation",
+    "Still working on leash manners",
+    "Would benefit from another playful dog in the home",
+    "Not suitable for homes with cats",
+    "Can thrive without a fence if provided sufficient daily activity",
+    "Typical young Husky personality requires structure and consistency"
+  ],
+  "medicalNeeds": [],
+  "trainingNeeds": [
+    "Continue leash training",
+    "Basic obedience reinforcement",
+    "Impulse control and focus exercises"
+  ],
+  "exerciseNeeds": [
+    "Daily walks",
+    "Play sessions with other dogs",
+    "Hiking and outdoor adventures",
+    "Mental enrichment activities"
+  ],
+  "idealHome": [
+    "Active family",
+    "Another playful dog preferred",
+    "Children welcome",
+    "Fenced yard preferred but not required",
+    "Owners who enjoy hiking and outdoor activities",
+    "People looking for a social companion"
+  ],
+  "canBeOnlyDog": true,
+  "wouldBenefitFromDogSibling": true,
+  "prefersWomen": false,
+  "biteRisk": false,
+  "experiencedOwnerPreferred": false,
+  "goodApartmentDog": false
+}
+  
+  {
     "id": "adonis",
     "name": "Adonis",
     "breed": "German Shepherd Mix",
@@ -801,84 +1117,6 @@
     ]
   },
   {
-    "id": "lillybee",
-    "name": "Lillybee",
-    "breed": "Miniature Poodle",
-    "ageYears": 8,
-    "weightLbs": 11,
-    "sex": "female",
-    "lifeStage": "senior",
-    "houseTrained": true,
-    "crateTrained": false,
-    "energyLevel": "low",
-    "goodWithDogs": "yes",
-    "goodWithCats": "unknown",
-    "goodWithChildren": "yes",
-    "fenceRequired": false,
-    "resourceGuarding": false,
-    "separationAnxiety": "none",
-  
-    "temperamentTraits": [
-      "affectionate",
-      "friendly",
-      "adaptable",
-      "gentle",
-      "easygoing",
-      "people-oriented",
-      "quiet",
-      "calm",
-      "social",
-      "intelligent",
-      "loyal",
-      "sweet"
-    ],
-  
-    "strengths": [
-      "friendly with children",
-      "dog friendly",
-      "quickly adapts to new environments",
-      "quiet and not barky",
-      "walks well on leash",
-      "low exercise needs",
-      "can be left alone responsibly",
-      "polite indoors",
-      "mostly house trained",
-      "does not require a crate",
-      "people focused companion",
-      "easy lifestyle fit"
-    ],
-  
-    "discussionPoints": [
-      "still has occasional potty accidents while adjusting to routine",
-      "has not been tested with cats and should have a proper introduction",
-      "occasionally humps other dogs",
-      "transition plan for maintaining house-training success",
-      "ongoing routine and consistency in her new home",
-      "senior dog wellness and veterinary care",
-      "grooming requirements for a poodle coat",
-      "appropriate exercise and enrichment despite low energy level",
-      "expectations around being left alone",
-      "continued positive socialization with other dogs"
-    ],
-  
-    "adultOnlyHome": false,
-    "minimumChildAge": 0,
-    "requiresAnotherDog": false,
-    "requiresOnlyPetHome": false,
-    "behavioralManagementRequired": false,
-    "biteHistory": false,
-    "traumaHistory": false,
-    "trainingSupportProvided": false,
-  
-    "medicalNeeds": [],
-  
-    "specialNeeds": [
-      "continued consistency with potty routine",
-      "regular poodle grooming and coat maintenance",
-      "best in a calm, companionship-oriented home"
-    ]
-  },
-  {
     "id": "lola",
     "name": "Lola",
     "breed": "Chihuahua/Terrier Mix",
@@ -959,171 +1197,6 @@
       "thrives with structure and consistent routines"
     ]
   },
-  {
-    "id": "lukas",
-    "name": "Lukas",
-    "breed": "Labrador Mix",
-    "ageYears": 4,
-    "weightLbs": 65,
-    "sex": "male",
-    "lifeStage": "adult",
-    "houseTrained": true,
-    "crateTrained": false,
-    "energyLevel": "high",
-    "goodWithDogs": "yes",
-    "goodWithCats": "unknown",
-    "goodWithChildren": "unknown",
-    "fenceRequired": true,
-    "resourceGuarding": false,
-    "separationAnxiety": "none",
-  
-    "temperamentTraits": [
-      "affectionate",
-      "friendly",
-      "playful",
-      "energetic",
-      "adventurous",
-      "social",
-      "people-oriented",
-      "loyal",
-      "enthusiastic",
-      "trainable",
-      "curious",
-      "outgoing"
-    ],
-  
-    "strengths": [
-      "loves all people",
-      "no aggression history",
-      "house trained",
-      "uses a doggy door reliably",
-      "does well when left alone",
-      "highly food motivated",
-      "eager to learn",
-      "excellent hiking companion potential",
-      "dog friendly with similarly sized dogs",
-      "forms strong bonds with his people",
-      "affectionate shadow dog",
-      "enjoys outdoor adventures"
-    ],
-  
-    "discussionPoints": [
-      "heartworm treatment plan and adopter responsibilities",
-      "requires a double leash during walks",
-      "strong pulling behavior on leash",
-      "ongoing leash manners training",
-      "counter surfing management",
-      "calming and impulse-control training",
-      "needs substantial daily exercise",
-      "best fit with older children due to size and energy",
-      "dog introductions should be limited to medium and large dogs",
-      "cat compatibility remains unknown",
-      "importance of a secure fenced yard"
-    ],
-  
-    "adultOnlyHome": false,
-    "minimumChildAge": 10,
-    "requiresAnotherDog": false,
-    "requiresOnlyPetHome": false,
-    "behavioralManagementRequired": true,
-    "biteHistory": false,
-    "traumaHistory": false,
-    "trainingSupportProvided": true,
-  
-    "medicalNeeds": [
-      "heartworm positive",
-      "heartworm treatment being provided by CrisisDogsNC"
-    ],
-  
-    "specialNeeds": [
-      "must continue heartworm treatment after adoption",
-      "requires a secure fenced yard",
-      "double leash required during walks",
-      "needs ongoing leash training",
-      "best with dogs his size or larger",
-      "requires an active home with significant daily exercise"
-    ]
-  },
-  {
-    "id": "maui",
-    "name": "Maui",
-    "breed": "Husky Mix",
-    "ageYears": 1,
-    "weightLbs": 47,
-    "sex": "male",
-    "lifeStage": "young_adult",
-    "houseTrained": true,
-    "crateTrained": true,
-    "energyLevel": "high",
-    "goodWithDogs": "yes",
-    "goodWithCats": "no",
-    "goodWithChildren": "yes",
-    "fenceRequired": false,
-    "resourceGuarding": false,
-    "separationAnxiety": "none",
-  
-    "temperamentTraits": [
-      "friendly",
-      "playful",
-      "social",
-      "affectionate",
-      "outgoing",
-      "adventurous",
-      "goofy",
-      "happy",
-      "people-oriented",
-      "dog-oriented",
-      "enthusiastic",
-      "loving"
-    ],
-  
-    "strengths": [
-      "excellent with children",
-      "dog friendly",
-      "crate trained",
-      "house trained",
-      "great house manners",
-      "excellent car rider",
-      "highly social",
-      "loves outdoor adventures",
-      "enjoys hiking and exploration",
-      "cuddly indoors",
-      "adapts well to active households",
-      "easygoing and friendly with new people"
-    ],
-  
-    "discussionPoints": [
-      "requires significant daily exercise and enrichment",
-      "ongoing leash training due to excitement outdoors",
-      "cat incompatibility",
-      "benefits greatly from canine companionship",
-      "exercise plan if home does not have a fenced yard",
-      "husky breed tendencies and management",
-      "maintaining structure and consistency",
-      "mental stimulation requirements",
-      "appropriate outlets for energy and play",
-      "transitioning into a new home while maintaining routines"
-    ],
-  
-    "adultOnlyHome": false,
-    "minimumChildAge": 0,
-    "requiresAnotherDog": false,
-    "requiresOnlyPetHome": false,
-    "behavioralManagementRequired": false,
-    "biteHistory": false,
-    "traumaHistory": false,
-    "trainingSupportProvided": true,
-  
-    "medicalNeeds": [],
-  
-    "specialNeeds": [
-      "requires substantial daily exercise",
-      "needs ongoing leash training",
-      "would thrive with one or more canine companions",
-      "requires regular mental enrichment and activity",
-      "if no fenced yard, adopter must provide significant outdoor exercise"
-    ]
-  }, 
   {
     "id": "miss-toots",
     "name": "Miss Toots",
@@ -1618,178 +1691,6 @@
       "may bark at passersby due to natural watchdog instincts"
     ]
   },
-  {
-    "id": "sable",
-    "name": "Sable",
-    "breed": "Doberman/Hound Mix",
-    "ageYears": 4,
-    "weightLbs": 47,
-    "sex": "female",
-    "lifeStage": "adult",
-    "houseTrained": true,
-    "crateTrained": false,
-    "energyLevel": "high",
-    "goodWithDogs": "yes",
-    "goodWithCats": "no",
-    "goodWithChildren": "yes",
-    "fenceRequired": true,
-    "resourceGuarding": false,
-    "separationAnxiety": "none",
-  
-    "temperamentTraits": [
-      "playful",
-      "affectionate",
-      "friendly",
-      "social",
-      "energetic",
-      "people-oriented",
-      "easygoing",
-      "loyal",
-      "outgoing",
-      "cuddly",
-      "enthusiastic",
-      "adventurous"
-    ],
-  
-    "strengths": [
-      "fully house trained",
-      "trustworthy when left alone",
-      "excellent house manners",
-      "good with other dogs",
-      "friendly with strangers",
-      "walks beautifully on leash",
-      "affectionate lap dog personality",
-      "enjoys outdoor adventures",
-      "highly social",
-      "adaptable family companion",
-      "playful and engaging",
-      "does not require a crate"
-    ],
-  
-    "discussionPoints": [
-      "prey drive toward cats and small animals",
-      "fenced yard requirement",
-      "daily exercise and enrichment expectations",
-      "managing excitement and jumping behavior",
-      "compatibility with young children",
-      "stuffed toy obsession and toy management",
-      "ideal activity level for adopters",
-      "dog-to-dog interactions and play style",
-      "maintaining leash skills",
-      "outdoor adventure opportunities",
-      "household expectations when left alone",
-      "ongoing training and impulse control"
-    ],
-  
-    "adultOnlyHome": false,
-    "minimumChildAge": 8,
-    "requiresAnotherDog": false,
-    "prefersAnotherDog": false,
-    "requiresOnlyPetHome": false,
-    "behavioralManagementRequired": false,
-    "biteHistory": false,
-    "traumaHistory": false,
-    "trainingSupportProvided": false,
-  
-    "medicalNeeds": [],
-  
-    "specialNeeds": [
-      "requires a securely fenced yard",
-      "not suitable for homes with cats",
-      "not suitable for homes with small prey animals",
-      "needs regular exercise and active play",
-      "best with children who can handle an enthusiastic, jumpy dog",
-      "benefits from continued work on impulse control and polite greetings"
-    ]
-  },
-
-{
-  "id": "shaggy",
-  "name": "Shaggy",
-  "breed": "Terrier Mix",
-  "ageYears": 2,
-  "weightLbs": 32,
-  "sex": "male",
-  "lifeStage": "young_adult",
-  "houseTrained": false,
-  "crateTrained": false,
-  "energyLevel": "high",
-  "goodWithDogs": "yes",
-  "goodWithCats": "yes",
-  "goodWithChildren": "yes",
-  "fenceRequired": true,
-  "resourceGuarding": false,
-  "separationAnxiety": "none",
-
-  "temperamentTraits": [
-    "playful",
-    "affectionate",
-    "intelligent",
-    "food-motivated",
-    "social",
-    "friendly",
-    "energetic",
-    "trainable",
-    "goofy",
-    "curious",
-    "enthusiastic",
-    "loving"
-  ],
-
-  "strengths": [
-    "good with dogs",
-    "good with cats",
-    "friendly with people",
-    "highly food motivated",
-    "eager to learn",
-    "already knows sit",
-    "submissive play style",
-    "very trainable",
-    "affectionate with family",
-    "enjoys active lifestyles",
-    "thrives with enrichment",
-    "social companion"
-  ],
-
-  "discussionPoints": [
-    "ongoing house training",
-    "ongoing crate training",
-    "high exercise requirements",
-    "need for daily mental stimulation",
-    "strong chewing behavior and management",
-    "counter surfing prevention",
-    "continued obedience training",
-    "jumping behavior around people",
-    "importance of structure and routine",
-    "appropriate chew toy management",
-    "compatibility with existing pets",
-    "benefits of having a playful dog companion"
-  ],
-
-  "adultOnlyHome": false,
-  "minimumChildAge": 10,
-  "requiresAnotherDog": false,
-  "prefersAnotherDog": true,
-  "requiresOnlyPetHome": false,
-  "behavioralManagementRequired": true,
-  "biteHistory": false,
-  "traumaHistory": false,
-  "trainingSupportProvided": false,
-
-  "medicalNeeds": [],
-
-  "specialNeeds": [
-    "requires a securely fenced yard",
-    "house training is still in progress",
-    "crate training is still in progress",
-    "needs continued obedience training",
-    "requires regular mental enrichment and exercise",
-    "strong chewing tendencies require management and supervision",
-    "counter surfing prevention strategies recommended",
-    "best with older children due to jumping and excitement",
-    "would enjoy a playful dog companion with similar energy"
-  ]
-},
 {
     "id": "sheila",
     "name": "Sheila",
@@ -1875,5 +1776,92 @@
       "benefits from continued leash training and socialization",
       "needs a home where someone has time to spend helping her feel secure"
     ]
+  },
+  {
+    "id": "steven",
+    "name": "Steven",
+    "breed": "French Bulldog",
+    "ageYears": 5,
+    "weightLbs": 26,
+    "sex": "male",
+    "lifeStage": "adult",
+    "houseTrained": false,
+    "crateTrained": true,
+    "energyLevel": "high",
+    "goodWithDogs": "yes",
+    "goodWithCats": "no",
+    "goodWithChildren": "unknown",
+    "adultOnlyHome": false,
+    "fenceRequired": false,
+    "otherPetsPreferred": true,
+    "resourceGuarding": false,
+    "separationAnxiety": "mild",
+    "specialNeeds": [
+      "Had stenotic nares surgery to improve breathing",
+      "Will be neutered prior to adoption",
+      "Needs continued potty training",
+      "Needs help learning polite greetings with dogs"
+    ],
+    "temperamentTraits": [
+      "affectionate",
+      "friendly",
+      "playful",
+      "energetic",
+      "social",
+      "people-oriented",
+      "enthusiastic",
+      "goofy",
+      "dog-selective",
+      "adventurous"
+    ],
+    "strengths": [
+      "Very affectionate and loves physical closeness",
+      "Friendly with everyone he meets",
+      "Crate trained",
+      "High energy and eager for adventures",
+      "Loves people and seeks attention",
+      "Would make a fun companion for an active family",
+      "Improving daily with training",
+      "Enjoys other dogs with proper introductions"
+    ],
+    "discussionPoints": [
+      "Working on house training",
+      "Needs continued leash training",
+      "Gets overly excited when seeing other dogs",
+      "Has a dominant play style and does best with energetic dog companions",
+      "Not suitable for homes with cats",
+      "Should avoid extreme heat because of his breed",
+      "Would benefit from an active, dog-experienced adopter",
+      "Needs guidance and structure to learn polite greetings"
+    ],
+    "medicalNeeds": [
+      "History of stenotic nares surgery",
+      "Brachycephalic breed—must avoid overheating"
+    ],
+    "trainingNeeds": [
+      "House training",
+      "Leash manners",
+      "Impulse control around other dogs",
+      "Continued socialization"
+    ],
+    "exerciseNeeds": [
+      "Daily walks",
+      "Interactive play",
+      "Moderate adventures and enrichment"
+    ],
+    "idealHome": [
+      "Active family",
+      "Dog-experienced owner preferred",
+      "Older dog-savvy children",
+      "Another active dog with compatible play style",
+      "Home without cats",
+      "People home often who enjoy companionship and adventures"
+    ],
+    "canBeOnlyDog": true,
+    "wouldBenefitFromDogSibling": true,
+    "prefersWomen": false,
+    "biteRisk": false,
+    "experiencedOwnerPreferred": true,
+    "goodApartmentDog": true
   }
 ]
