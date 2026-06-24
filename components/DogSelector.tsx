@@ -48,7 +48,7 @@ export function DogSelector({
       </h3>
 
       <div className="space-y-2 max-h-96 overflow-y-auto">
-        {dogs.map((dog) => {
+        {dogs.sort((a, b) => a.name.localeCompare(b.name)).map((dog) => {
           const checked =
             selectedDogIds.includes(
               dog.id
