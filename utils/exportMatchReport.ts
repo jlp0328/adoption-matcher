@@ -57,7 +57,7 @@ export function exportMatchReport(
       ["Household Type", valueOrUnknown(applicant.householdType)],
       ["Children", childSummary(applicant)],
       ["Resident Dogs", listCount(applicant.residentDogs)],
-      ["Resident Cats", listCount(applicant.residentCats)],
+      ["Resident Cats", String(applicant.residentCats ?? 0)],
       ["Fenced Yard", applicant.fencedYard ? "Yes" : "No"],
       ["Work Schedule", valueOrUnknown((applicant as any).workSchedule)],
       ["Activity Level", valueOrUnknown((applicant as any).activityLevel)],
