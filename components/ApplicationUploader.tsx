@@ -157,7 +157,7 @@ export default function ApplicationUploader() {
         )}
 
         {/* Rank Applicants Mode */}
-        {matchMode === "rankApplicants" && (
+        {/* {matchMode === "rankApplicants" && (
           <div className="mt-4">
             <RankingDogSelector
               dogs={dogs as Dog[]}
@@ -165,7 +165,7 @@ export default function ApplicationUploader() {
               onChange={setSelectedRankingDogId}
             />
           </div>
-        )}
+        )} */}
 
         <div className="space-y-3">
           <input
@@ -236,9 +236,12 @@ export default function ApplicationUploader() {
           >
             Reset
           </button>
-          {matches.length > 0 && (
+          {applicant && matches.length > 0 && (
             <button
-              onClick={() => exportMatchReport(applicant, matches)}
+              onClick={() => {
+                if (!applicant) return;
+                exportMatchReport(applicant, matches);
+              }}
               className="px-4 py-2 bg-green-600 text-white rounded"
             >
               Export PDF

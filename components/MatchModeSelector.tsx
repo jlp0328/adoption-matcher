@@ -51,7 +51,7 @@ export function MatchModeSelector({
           </span>
         </label>
 
-        <label className="flex items-center gap-3 cursor-pointer">
+        {/* <label className="flex items-center gap-3 cursor-pointer">
           <input
             type="radio"
             name="match-mode"
@@ -64,7 +64,7 @@ export function MatchModeSelector({
           <span>
             Rank Applicants For One Dog
           </span>
-        </label>
+        </label> */}
       </div>
     </div>
   );

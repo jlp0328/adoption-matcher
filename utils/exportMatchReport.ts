@@ -58,7 +58,7 @@ export function exportMatchReport(
       ],
       [
         "Resident Cats",
-        String(applicant.residentCats?.length ?? 0),
+        String(applicant.residentCats ?? 0),
       ],
       [
         "Fence",
