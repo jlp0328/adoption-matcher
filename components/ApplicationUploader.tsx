@@ -55,6 +55,7 @@ export default function ApplicationUploader() {
   const MAX_APPLICATIONS = 5;
 
   const [files, setFiles] = useState<File[]>([]);
+  const [fileInputKey, setFileInputKey] = useState(0);
 
   const fileInputRef = useRef<HTMLInputElement>(null);
 
@@ -136,6 +137,8 @@ export default function ApplicationUploader() {
     if (fileInputRef.current) {
       fileInputRef.current.value = "";
     }
+
+    setFileInputKey((key) => key + 1);
   }
 
   return (
@@ -169,6 +172,8 @@ export default function ApplicationUploader() {
 
         <div className="space-y-3">
           <input
+            key={fileInputKey}
+            ref={fileInputRef}
             id={fileInputId}
             type="file"
             multiple

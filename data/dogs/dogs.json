@@ -1862,5 +1862,251 @@
     "biteRisk": false,
     "experiencedOwnerPreferred": true,
     "goodApartmentDog": true
+  },
+  {
+    "id": "scarlett",
+    "name": "Scarlett",
+    "breed": "Terrier Mix",
+    "ageYears": 3,
+    "weightLbs": 11,
+    "sex": "female",
+    "lifeStage": "adult",
+    "houseTrained": true,
+    "crateTrained": true,
+    "energyLevel": "low",
+    "goodWithDogs": "yes",
+    "goodWithCats": "yes",
+    "goodWithChildren": "unknown",
+    "adultOnlyHome": false,
+    "fenceRequired": false,
+    "otherPetsPreferred": true,
+    "resourceGuarding": false,
+    "separationAnxiety": "none",
+    "specialNeeds": [
+      "May be shy when first meeting new people",
+      "Benefits from patient introductions and a calm environment"
+    ],
+    "temperamentTraits": [
+      "gentle",
+      "sweet",
+      "shy",
+      "affectionate",
+      "easygoing",
+      "calm",
+      "friendly",
+      "cuddly",
+      "adaptable",
+      "observant"
+    ],
+    "strengths": [
+      "House trained and reliable indoors",
+      "Crate trained and settles well when left alone",
+      "Excellent with other dogs",
+      "Cat friendly",
+      "Low-maintenance, low-energy companion",
+      "Warms up quickly and becomes very affectionate",
+      "Enjoys cuddling with her people",
+      "Easygoing personality",
+      "Would fit well into many household types"
+    ],
+    "discussionPoints": [
+      "May be shy during the first few days in a new home",
+      "Benefits from slow introductions to new people",
+      "Would enjoy another friendly dog but is equally happy as an only dog",
+      "Has not been tested with children, so a meet-and-greet is recommended",
+      "Thrives in calm, patient households that allow her confidence to grow"
+    ],
+    "medicalNeeds": [],
+    "trainingNeeds": [
+      "Continue confidence building",
+      "Maintain positive reinforcement routines",
+      "Continue socialization with new people and environments"
+    ],
+    "exerciseNeeds": [
+      "Daily walks",
+      "Light play sessions",
+      "Mental enrichment through toys and interaction"
+    ],
+    "idealHome": [
+      "Calm household",
+      "Patient adopter willing to let her settle in",
+      "Another friendly dog would be a bonus",
+      "Cats welcome",
+      "Apartment or house",
+      "Someone looking for a cuddly, low-key companion"
+    ],
+    "canBeOnlyDog": true,
+    "wouldBenefitFromDogSibling": true,
+    "prefersWomen": false,
+    "biteRisk": false,
+    "experiencedOwnerPreferred": false,
+    "goodApartmentDog": true
+  },
+  {
+    "id": "chanel",
+    "name": "Chanel",
+    "breed": "Shiba Inu Mix",
+    "ageYears": 6,
+    "weightLbs": 15,
+    "sex": "female",
+    "lifeStage": "adult",
+    "houseTrained": true,
+    "crateTrained": true,
+    "energyLevel": "high",
+    "goodWithDogs": "yes",
+    "goodWithCats": "yes",
+    "goodWithChildren": "yes",
+    "adultOnlyHome": false,
+    "fenceRequired": false,
+    "otherPetsPreferred": false,
+    "resourceGuarding": false,
+    "separationAnxiety": "none",
+    "specialNeeds": [],
+    "temperamentTraits": [
+      "happy",
+      "affectionate",
+      "playful",
+      "confident",
+      "friendly",
+      "social",
+      "energetic",
+      "curious",
+      "loyal",
+      "adventurous"
+    ],
+    "strengths": [
+      "Excellent family dog",
+      "Wonderful with children",
+      "Dog friendly",
+      "Cat friendly",
+      "House trained",
+      "Crate trained",
+      "Walks well on a leash",
+      "Loves adventures and exploring",
+      "Very affectionate and enjoys cuddling",
+      "Adaptable to many home environments"
+    ],
+    "discussionPoints": [
+      "Has a confident, slightly dominant play style with other dogs",
+      "Would enjoy another playful dog but can also thrive as an only dog",
+      "Needs daily exercise and mental enrichment",
+      "Would make an excellent companion for active families",
+      "Benefits from continued positive reinforcement and structure"
+    ],
+    "medicalNeeds": [],
+    "trainingNeeds": [
+      "Continue basic obedience",
+      "Maintain leash manners",
+      "Provide ongoing mental enrichment"
+    ],
+    "exerciseNeeds": [
+      "Daily walks",
+      "Interactive play sessions",
+      "Hiking or outdoor adventures",
+      "Puzzle toys and enrichment activities"
+    ],
+    "idealHome": [
+      "Active family",
+      "Home with children",
+      "Apartment or house",
+      "Another playful dog or as an only dog",
+      "Cats welcome",
+      "Family looking for an affectionate adventure companion"
+    ],
+    "canBeOnlyDog": true,
+    "wouldBenefitFromDogSibling": true,
+    "prefersWomen": false,
+    "biteRisk": false,
+    "experiencedOwnerPreferred": false,
+    "goodApartmentDog": true
+  },
+  {
+    "id": "kong",
+    "name": "Kong",
+    "breed": "Chiweenie",
+    "ageYears": 5,
+    "weightLbs": 13,
+    "sex": "male",
+    "lifeStage": "adult",
+    "houseTrained": false,
+    "crateTrained": true,
+    "energyLevel": "low",
+    "goodWithDogs": "yes",
+    "goodWithCats": "unknown",
+    "goodWithChildren": "older_children_only",
+    "adultOnlyHome": false,
+    "fenceRequired": false,
+    "otherPetsPreferred": true,
+    "resourceGuarding": false,
+    "separationAnxiety": "mild",
+    "specialNeeds": [
+      "Still working on house training",
+      "Prefers someone home most of the time",
+      "May bark when left alone for extended periods",
+      "Can be skittish with new people and needs patient introductions"
+    ],
+    "temperamentTraits": [
+      "affectionate",
+      "cuddly",
+      "gentle",
+      "loyal",
+      "low-energy",
+      "skittish at first",
+      "food-motivated",
+      "people-oriented",
+      "easygoing",
+      "snuggly"
+    ],
+    "strengths": [
+      "Excellent lap dog and cuddle companion",
+      "Crate trained",
+      "Can be left home uncrated without being destructive",
+      "Good with other dogs",
+      "Would enjoy a dog sibling",
+      "Leash trained",
+      "Low energy and easygoing",
+      "Food motivated, which can help with training",
+      "Stays close when outdoors",
+      "Warms up with treats, patience, and gentle handling"
+    ],
+    "discussionPoints": [
+      "House training is still in progress and will need consistency",
+      "May bark when left alone for long periods",
+      "Best fit for someone home frequently",
+      "Would benefit from another friendly dog but does not require one",
+      "Best with older, calm children due to his skittishness",
+      "Cat compatibility has not been tested",
+      "May investigate trash cans if food is accessible",
+      "Needs slow introductions to new people",
+      "Prefers sleeping close to his people, ideally under blankets"
+    ],
+    "medicalNeeds": [],
+    "trainingNeeds": [
+      "Continue house-training routine",
+      "Confidence building with new people",
+      "Practice calm alone-time routines",
+      "Trash can and food-access management"
+    ],
+    "exerciseNeeds": [
+      "Short daily walks",
+      "Indoor play",
+      "Light outdoor time",
+      "Mental enrichment using treats or food puzzles"
+    ],
+    "idealHome": [
+      "Single person or adult couple",
+      "Retiree or remote worker",
+      "Someone home most of the time",
+      "Older calm children if children are present",
+      "Another friendly dog would be a plus",
+      "Home with plenty of lap time, blankets, and cuddles",
+      "Calm, predictable household"
+    ],
+    "canBeOnlyDog": true,
+    "wouldBenefitFromDogSibling": true,
+    "prefersWomen": false,
+    "biteRisk": false,
+    "experiencedOwnerPreferred": false,
+    "goodApartmentDog": true
   }
 ]
